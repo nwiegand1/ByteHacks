@@ -10,9 +10,9 @@ var app = firebase.initializeApp({apiKey: "AIzaSyDRdXCbRNvSAQZ31f4lAXbrL_-4vNreH
     projectId: "friendslocation-15838",
     storageBucket: "friendslocation-15838.appspot.com",
     messagingSenderId: "1046326063652"});
-var storage = firebase.storage();
-var database = firebase.database();
-var pos;
+// var storage = firebase.storage();
+// var database = firebase.database();
+// var pos;
 
 function pullFromDB(user_id) {
   var userid, pos, picture;
