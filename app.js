@@ -14,9 +14,8 @@ bot.on('error', (err) => {
 
 // receives GETTING_STARTED and RATE_LOCATION payloads
 bot.on('postback', (payload, reply, actions) => {
-  console.log(payload.postback)
   let text = payload.postback.payload
-  response = ""
+  var response = ""
   if (text == "GET_STARTED") {
     response = "TODO: write instructions for using the bot here!"
   } else if (text == "RATE_LOCATION") {
