@@ -3,32 +3,32 @@ const http = require('http')
 const fs = require('fs');
 const Bot = require('messenger-bot')
 
-// var firebase = require('firebase');
-// var app = firebase.initializeApp({apiKey: "AIzaSyDRdXCbRNvSAQZ31f4lAXbrL_-4vNreHRA",
-//     authDomain: "friendslocation-15838.firebaseapp.com",
-//     databaseURL: "https://friendslocation-15838.firebaseio.com",
-//     projectId: "friendslocation-15838",
-//     storageBucket: "friendslocation-15838.appspot.com",
-//     messagingSenderId: "1046326063652"});
-// var storage = firebase.storage();
-// var database = firebase.database();
-// var pos;
+var firebase = require('firebase');
+var app = firebase.initializeApp({apiKey: "AIzaSyDRdXCbRNvSAQZ31f4lAXbrL_-4vNreHRA",
+    authDomain: "friendslocation-15838.firebaseapp.com",
+    databaseURL: "https://friendslocation-15838.firebaseio.com",
+    projectId: "friendslocation-15838",
+    storageBucket: "friendslocation-15838.appspot.com",
+    messagingSenderId: "1046326063652"});
+var storage = firebase.storage();
+var database = firebase.database();
+var pos;
 
-function pullFromDB() {
-        var userid, pos, picture;
-        var ref = firebase.database().ref();
-        ref.once("value")
-        .then(function(snapshot) {
-          snapshot.forEach(function(childSnapshot) {
-            userid = childSnapshot.val();
-            username = String(childSnapshot.child('username').val());
-            pos = childSnapshot.child('pos').val();
-            picture = childSnapshot.child('picture').val();
-            //console.log(username);
-            console.log(pos);
-          });
-        });
-      }
+function pullFromDB(user_id) {
+  var userid, pos, picture;
+  var ref = firebase.database().ref();
+  ref.once("value")
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      userid = childSnapshot.val();
+      username = String(childSnapshot.child('username').val());
+      pos = childSnapshot.child('pos').val();
+      picture = childSnapshot.child('picture').val();
+      //console.log(username);
+      console.log(pos);
+    });
+  });
+}
 		
 						 		
 
@@ -49,6 +49,8 @@ bot.on('postback', (payload, reply, actions) => {
     response = "Thank you for using the PrideBot - your assistant for connecting with friends at the Pride parade and for rating venues based on LGBTQ inclusivity! To get started, click on the 'See Map' button for a map view of all your facebook friends also using the PrideBot nearby. If you're currently at a venue you'd like to rate, click on the 'Rate Location' button. Otherwise send me a message, and I'll echo anything you say."
   } else if (text == "RATE_LOCATION") {
     response = "TODO: get location from firebase, return list of nearby places"
+    console.log(payload.sender.id)
+    pullFromDB(payload.sender.id)
   }
   reply({ text: response}, (err, info) => {})
 })
@@ -56,7 +58,6 @@ bot.on('postback', (payload, reply, actions) => {
 // receives all other text
 bot.on('message', (payload, reply) => {
   let text = payload.message.text
-  console.log(payload.sender.id)
 
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
