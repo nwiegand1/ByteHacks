@@ -1,0 +1,39 @@
+# SET GET STARTED
+curl -X POST -H "Content-Type: application/json" -d '{ 
+  "get_started":{
+    "payload":"GET_STARTED"
+  }
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAZAsRtD1e0UBAM55DeZA4oq1pDx0tQj84vtqrC803ZA1ixEP1bdA8ErdrmndrllXZB1OoqF6IRZAkFYQf1EMOZBBsFNUGtvELWbdNkA1XgsVTlXet90p2mjypH7P9BG0IwBU9UzsVnIZBKa8RUVhpaESgR205dd82rZC2u3ZCgu9IAZDZD"
+
+# GET GET STARTED
+curl -X GET "https://graph.facebook.com/v2.6/me/messenger_profile?fields=get_started&access_token=EAAZAsRtD1e0UBAM55DeZA4oq1pDx0tQj84vtqrC803ZA1ixEP1bdA8ErdrmndrllXZB1OoqF6IRZAkFYQf1EMOZBBsFNUGtvELWbdNkA1XgsVTlXet90p2mjypH7P9BG0IwBU9UzsVnIZBKa8RUVhpaESgR205dd82rZC2u3ZCgu9IAZDZD"    
+
+# PERSISTENT MENU
+https://developers.facebook.com/docs/messenger-platform/messenger-profile/get-started-button
+
+# SET PERSISTENT MENU
+curl -X POST -H "Content-Type: application/json" -d '{
+  "persistent_menu":[
+    {
+      "locale":"default",
+      "call_to_actions":[
+        {
+          "title":"Rate Location",
+          "type":"postback",
+          "payload":"RATE_LOCATION"
+        },
+        {
+          "title":"See Map",
+          "type":"web_url",
+          "url":"https://obscure-falls-14988.herokuapp.com/",
+          "webview_height_ratio":"tall"
+        }
+      ]
+    }
+  ]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAZAsRtD1e0UBAM55DeZA4oq1pDx0tQj84vtqrC803ZA1ixEP1bdA8ErdrmndrllXZB1OoqF6IRZAkFYQf1EMOZBBsFNUGtvELWbdNkA1XgsVTlXet90p2mjypH7P9BG0IwBU9UzsVnIZBKa8RUVhpaESgR205dd82rZC2u3ZCgu9IAZDZD"
+
+# GET PERSISTENT MENU
+curl -X GET "https://graph.facebook.com/v2.6/me/messenger_profile?fields=persistent_menu&access_token=EAAZAsRtD1e0UBAM55DeZA4oq1pDx0tQj84vtqrC803ZA1ixEP1bdA8ErdrmndrllXZB1OoqF6IRZAkFYQf1EMOZBBsFNUGtvELWbdNkA1XgsVTlXet90p2mjypH7P9BG0IwBU9UzsVnIZBKa8RUVhpaESgR205dd82rZC2u3ZCgu9IAZDZD"    
+
+   
