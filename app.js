@@ -40,10 +40,8 @@ function getPos(senderid) {
         });
 	console.log(senderPos);
 	return senderPos;
-}
-		
-						 		
-
+}		
+						 	
 let bot = new Bot({
   token: 'EAAZAsRtD1e0UBAM55DeZA4oq1pDx0tQj84vtqrC803ZA1ixEP1bdA8ErdrmndrllXZB1OoqF6IRZAkFYQf1EMOZBBsFNUGtvELWbdNkA1XgsVTlXet90p2mjypH7P9BG0IwBU9UzsVnIZBKa8RUVhpaESgR205dd82rZC2u3ZCgu9IAZDZD',
   verify: 'VERIFY_TOKEN'
@@ -63,6 +61,8 @@ bot.on('postback', (payload, reply, actions) => {
 	result = pullFromDB();
 	
     response = "TODO: get location from firebase, return list of nearby places"
+    console.log(payload.sender.id)
+    pullFromDB(payload.sender.id)
   }
   reply({ text: response}, (err, info) => {})
 })
@@ -71,8 +71,11 @@ bot.on('postback', (payload, reply, actions) => {
 var senderPos;
 bot.on('message', (payload, reply) => {
   let text = payload.message.text
+<<<<<<< HEAD
   console.log(payload.sender.id)
   senderPos = getPos(sender.id);
+=======
+>>>>>>> 4b853e9e3cbb7d3f28493d0a5fd99caa13d8797d
 
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
