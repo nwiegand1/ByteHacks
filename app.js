@@ -71,7 +71,7 @@ bot.on('message', (payload, reply) => {
   let text = "You rated Spotify HQ a " + payload.message.text + ". Thank you!"
 
   console.log(payload.sender.id)
-  senderPos = getPos(sender.id);
+  senderPos = getPos(payload.sender.id);
 
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
