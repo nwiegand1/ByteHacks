@@ -12,8 +12,14 @@ bot.on('error', (err) => {
   console.log(err.message)
 })
 
-bot.on('message', (payload, reply) => {
+// receives GETTING_STARTED and RATE_LOCATION payloads
+bot.on('postback', (payload, reply, actions) => {
   console.log(payload);
+  reply({ text: 'payload received!'}, (err, info) => {})
+})
+
+// receives all other text
+bot.on('message', (payload, reply) => {
   let text = payload.message.text
 
   bot.getProfile(payload.sender.id, (err, profile) => {
