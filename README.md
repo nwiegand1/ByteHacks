@@ -28,4 +28,4 @@ We learned so much!! We loved learning from the mentors and hearing about their 
 
 ## What's next for PrideBot
 
-Next for the Pride Map is to allow users to donate to the different organizations that are walking in the parade and learn more about them as they walk by. Also next for the PrideBot is the ability to ask users to rate locations so that it is a more simplified experience.
+Next for the Pride Map is to allow users to donate to the different organizations that are walking in the parade and learn more about them as they walk by. Also next for the PrideBot is the ability to routinely ask users to rate locations so that it is a more simplified experience. Having the rating system in Facebook messenger allows users to rate locations in a place that they use often, messenger, making it a more intuitive experience. We would also like our bot to be able to respond to users questions about issues surrounding the LGBTQ community and how to best continue to foster inclusivity and support everyone in their community.
