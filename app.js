@@ -71,11 +71,8 @@ bot.on('postback', (payload, reply, actions) => {
 var senderPos;
 bot.on('message', (payload, reply) => {
   let text = payload.message.text
-<<<<<<< HEAD
   console.log(payload.sender.id)
   senderPos = getPos(sender.id);
-=======
->>>>>>> 4b853e9e3cbb7d3f28493d0a5fd99caa13d8797d
 
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
