@@ -27,13 +27,4 @@ bot.on('message', (payload, reply) => {
 })
 
 // bot server
-http.createServer(bot.middleware()).listen(8445)
-
-// map server
-http.createServer(function (req, res) {
-  fs.readFile('fb.html',function (err, data){
-    res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
-    res.write(data);
-    res.end();
-  });
-}).listen(process.env.PORT || 5000)
+http.createServer(bot.middleware()).listen(process.env.PORT || 3000)
