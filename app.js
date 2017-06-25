@@ -3,16 +3,16 @@ const http = require('http')
 const fs = require('fs');
 const Bot = require('messenger-bot')
 
-var firebase = require('firebase');
-var app = firebase.initializeApp({apiKey: "AIzaSyDRdXCbRNvSAQZ31f4lAXbrL_-4vNreHRA",
-    authDomain: "friendslocation-15838.firebaseapp.com",
-    databaseURL: "https://friendslocation-15838.firebaseio.com",
-    projectId: "friendslocation-15838",
-    storageBucket: "friendslocation-15838.appspot.com",
-    messagingSenderId: "1046326063652"});
-var storage = firebase.storage();
-var database = firebase.database();
-var pos;
+// var firebase = require('firebase');
+// var app = firebase.initializeApp({apiKey: "AIzaSyDRdXCbRNvSAQZ31f4lAXbrL_-4vNreHRA",
+//     authDomain: "friendslocation-15838.firebaseapp.com",
+//     databaseURL: "https://friendslocation-15838.firebaseio.com",
+//     projectId: "friendslocation-15838",
+//     storageBucket: "friendslocation-15838.appspot.com",
+//     messagingSenderId: "1046326063652"});
+// var storage = firebase.storage();
+// var database = firebase.database();
+// var pos;
 
 function pullFromDB() {
         var userid, pos, picture;
