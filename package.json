@@ -1,0 +1,26 @@
+{
+  "name": "bytehacks",
+  "version": "1.0.0",
+  "engines": {
+    "node": "5.2.0",
+    "npm": "3.10.7"
+  },
+  "description": "pridebot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nwiegand1/ByteHacks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nwiegand1/ByteHacks/issues"
+  },
+  "homepage": "https://github.com/nwiegand1/ByteHacks#readme",
+  "dependencies": {
+    "messenger-bot": "^2.4.0"
+  }
+}
