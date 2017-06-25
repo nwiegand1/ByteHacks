@@ -14,6 +14,10 @@ This bot was built with Javascript and uses the Facebook api and the GoogleMaps 
 
 We used the Facebook api and login to get a list of the users friends, and if their friends also use pride bot, their location is displayed on a map with the Pride Parade map outlined to facilitate finding your friends more easily.
 
+Our firebase db saves users' latest location so that it can be displayed on the map.
+
+We used the Facebook messenger platform to enable users from both Android and iOS devices to engage with eachother and for it's ability to embed webapps and use the Facebook friends feature
+
 ## Challenges We ran into
 
 we ran into a lot of Github challenges when we were creating a new ssh key!! We also strugged through the messenger "get started" walk-through because it is a little out of order! But we made it!!
