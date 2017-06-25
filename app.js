@@ -14,8 +14,14 @@ bot.on('error', (err) => {
 
 // receives GETTING_STARTED and RATE_LOCATION payloads
 bot.on('postback', (payload, reply, actions) => {
-  console.log(payload);
-  reply({ text: 'payload received!'}, (err, info) => {})
+  let text = payload.postback.payload
+  response = ""
+  if (text == "GET_STARTED") {
+    response = "TODO: write instructions for using the bot here!"
+  } else if (text == "RATE_LOCATION") {
+    response = "TODO: get location from firebase, return list of nearby places"
+  }
+  reply({ text: response}, (err, info) => {})
 })
 
 // receives all other text
