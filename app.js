@@ -48,7 +48,7 @@ bot.on('postback', (payload, reply, actions) => {
   if (text == "GET_STARTED") {
     response = "Thank you for using the PrideBot - your assistant for connecting with friends at the Pride parade and for rating venues based on LGBTQ inclusivity! To get started, click on the 'See Map' button for a map view of all your facebook friends also using the PrideBot nearby. If you're currently at a venue you'd like to rate, click on the 'Rate Location' button. Otherwise send me a message, and I'll echo anything you say."
   } else if (text == "RATE_LOCATION") {
-    response = "TODO: get location from firebase, return list of nearby places"
+    response = "Input your rating for Spotify HQ"
     console.log(payload.sender.id)
     pullFromDB(payload.sender.id)
   }
@@ -57,7 +57,7 @@ bot.on('postback', (payload, reply, actions) => {
 
 // receives all other text
 bot.on('message', (payload, reply) => {
-  let text = payload.message.text
+  let text = "You rated Spotify HQ a " + payload.message.text + ". Thank you!"
 
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
