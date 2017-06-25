@@ -6,24 +6,26 @@ Inspired by Pride Month and the NYC Pride Parade tomorrow, we wanted to make a p
 
 ## What it does
 
-pride.tech is a facebook bot that allows users to rate different types of locations like businesses, parks, museums on their inclusivity and uses the users location to prompt them with rating places close to them. Our bot also allows users to see their supportive facebook friends locations so that during large events like the Pride Parade, you can find your friends and have fun!
+PrideBot is a Facebook bot that allows users to rate different types of locations like businesses, parks, museums on their inclusivity and uses the users location to prompt them with rating places close to them. Our bot also allows users to see their supportive facebook friends locations so that during large events like the Pride Parade, you can find your friends and have fun!
 
-## How I built it
+## How We built it
 
-This bot is built with javascript and the facebook api, hosted by heroku
+This bot was built with Javascript and uses the Facebook api and the GoogleMaps api, with a firebase database, and is hosted by heroku
 
-## Challenges I ran into
+We used the Facebook api and login to get a list of the users friends, and if their friends also use pride bot, their location is displayed on a map with the Pride Parade map outlined to facilitate finding your friends more easily.
 
-we ran into a lot of github challenges in creating a new ssh key!! we have been struggling though creating our first ever chatbot, too!
+## Challenges We ran into
 
-## Accomplishments that I'm proud of
+we ran into a lot of Github challenges when we were creating a new ssh key!! We also strugged through the messenger "get started" walk-through because it is a little out of order! But we made it!!
 
-We are so proud of 
+## Accomplishments that We're proud of
 
-## What I learned
+We are proud of building a functional bot with a simple user interface and sleek map graphics that display users pictures and locations on the map and displaying the Pride Parade route! We're also proud of the 
 
-We learned so much!! We loved learning from the mentors
+## What We learned
 
-## What's next for pride.tech
+We learned so much!! We loved learning from the mentors and hearing about their experiences in the panels and in talking to them afterwards. We learned about how to create a facebook bot, how to do post requests in javascript, how to connect different api's 
 
-Next for pride.tech is the ability to ask users to rate locations so that it is a more simplified experience
+## What's next for PrideBot
+
+Next for the Pride Map is to allow users to donate to the different organizations that are walking in the parade and learn more about them as they walk by. Also next for the PrideBot is the ability to ask users to rate locations so that it is a more simplified experience.

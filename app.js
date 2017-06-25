@@ -5,33 +5,43 @@ const Bot = require('messenger-bot')
 
 var firebase = require('firebase');
 var app = firebase.initializeApp({apiKey: "AIzaSyDRdXCbRNvSAQZ31f4lAXbrL_-4vNreHRA",
-    authDomain: "friendslocation-15838.firebaseapp.com",
-    databaseURL: "https://friendslocation-15838.firebaseio.com",
-    projectId: "friendslocation-15838",
-    storageBucket: "friendslocation-15838.appspot.com",
-    messagingSenderId: "1046326063652"});
-// var storage = firebase.storage();
-// var database = firebase.database();
-// var pos;
+     authDomain: "friendslocation-15838.firebaseapp.com",
+     databaseURL: "https://friendslocation-15838.firebaseio.com",
+     projectId: "friendslocation-15838",
+     storageBucket: "friendslocation-15838.appspot.com",
+     messagingSenderId: "1046326063652"});
+var storage = firebase.storage();
+var database = firebase.database();
+var pos;
+var result;
 
-function pullFromDB(user_id) {
-  var userid, pos, picture;
-  var ref = firebase.database().ref();
-  ref.once("value")
-  .then(function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      userid = childSnapshot.val();
-      username = String(childSnapshot.child('username').val());
-      pos = childSnapshot.child('pos').val();
-      picture = childSnapshot.child('picture').val();
-      //console.log(username);
-      console.log(pos);
-    });
-  });
-}
-		
-						 		
+function pullFromDB() {
+        var userid, pos, picture;
+        var ref = firebase.database().ref();
+        ref.once("value")
+        .then(function(snapshot) {
+          snapshot.forEach(function(childSnapshot) {
+            userid = childSnapshot.val();
+            username = String(childSnapshot.child('username').val());
+            pos = childSnapshot.child('pos').val();
+            picture = childSnapshot.child('picture').val();
+            //console.log(username);
+            console.log(pos);
+          });
+        });
+      }
 
+function getPos(senderid) {
+	var senderPos;
+	var ref = firebase.database().ref();
+	ref.once("value")
+        .then(function(snapshot) {
+          senderPos = snapshot.child(senderid).child('pos');
+        });
+	console.log(senderPos);
+	return senderPos;
+}		
+						 	
 let bot = new Bot({
   token: 'EAAZAsRtD1e0UBAM55DeZA4oq1pDx0tQj84vtqrC803ZA1ixEP1bdA8ErdrmndrllXZB1OoqF6IRZAkFYQf1EMOZBBsFNUGtvELWbdNkA1XgsVTlXet90p2mjypH7P9BG0IwBU9UzsVnIZBKa8RUVhpaESgR205dd82rZC2u3ZCgu9IAZDZD',
   verify: 'VERIFY_TOKEN'
@@ -56,8 +66,12 @@ bot.on('postback', (payload, reply, actions) => {
 })
 
 // receives all other text
+var senderPos;
 bot.on('message', (payload, reply) => {
   let text = "You rated Spotify HQ a " + payload.message.text + ". Thank you!"
+
+  console.log(payload.sender.id)
+  senderPos = getPos(sender.id);
 
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
