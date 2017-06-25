@@ -56,7 +56,7 @@ bot.on('postback', (payload, reply, actions) => {
   let text = payload.postback.payload
   var response = ""
   if (text == "GET_STARTED") {
-    response = "Thank you for using the PrideBot - your assistant for connecting with friends at the Pride parade and for rating venues based on LGBTQ inclusivity! To get started, click on the 'See Map' button for a map view of all your facebook friends also using the PrideBot nearby. If you're currently at a venue you'd like to rate, click on the 'Rate Location' button."
+    response = "Thank you for using the PrideBot - your assistant for connecting with friends at the Pride parade and for rating venues based on LGBTQ inclusivity! To get started, click on the 'See Map' button for a map view of all your facebook friends also using the PrideBot nearby. If you're currently at a venue you'd like to rate, click on the 'Rate Location' button. Otherwise, I'll echo anything you say!"
   } else if (text == "RATE_LOCATION") {
     response = "Input your rating for Spotify HQ on a scale from 1-5"
     console.log(payload.sender.id)
