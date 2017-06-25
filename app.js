@@ -68,7 +68,7 @@ bot.on('postback', (payload, reply, actions) => {
 // receives all other text
 var senderPos;
 bot.on('message', (payload, reply) => {
-  msg = payload.message.text
+  var msg = payload.message.text
   if (!isNaN(msg)) {
     msg = "You rated Spotify HQ a " + msg + ". Thank you!"
   }
